@@ -76,19 +76,25 @@ public class Map : MonoBehaviour
     public void SetTile (DragableTile tile) {
         Cage cage = CageByVector(tile.GetRealPointPosition(tile.Caveman));
         tile.TranslateThePointToPoint(tile.Caveman, cage);
-        foreach (GameObject point in tile.RaycastPoints) {
-            cage = CageByVector(tile.GetRealPointPosition(point));
+        if (CanSetTile(tile)) {
+            foreach (GameObject point in tile.RaycastPoints) {
+                cage = CageByVector(tile.GetRealPointPosition(point));
+                cage.isFree = false;
+                tile.OccupiedCages.Add(cage);
+            }
+            cage = CageByVector(tile.GetRealPointPosition(tile.Caveman));
             cage.isFree = false;
+            cage.isCaveman = true;
             tile.OccupiedCages.Add(cage);
+
+            tile.IsSet = true;
+
+            tile.transform.parent = TileZone.Singleton.SetTilesParent;
+
+            WinChecker.CheckWin();
+        } else {
+            StartCoroutine(tile.ReturnToStartPosition());
         }
-        cage = CageByVector(tile.GetRealPointPosition(tile.Caveman));
-        cage.isFree = false;
-        cage.isCaveman = true;
-        tile.OccupiedCages.Add(cage);
-
-        tile.isSet = true;
-
-        WinChecker.CheckWin();
     }
     #endregion
 

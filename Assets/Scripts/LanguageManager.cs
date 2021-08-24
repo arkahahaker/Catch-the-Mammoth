@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Linq;
 
 public class LanguageManager {
 
     public static Language language = new Language();
+    public static Font font;
 
     public static int languagesCount = 3;
 
@@ -29,19 +31,53 @@ public class LanguageManager {
     private static void ApplyLanguage() {
         string json = Resources.Load<TextAsset>("Languages/" + getLangSufix()).ToString();
         language = JsonUtility.FromJson<Language>(json);
-        Debug.Log(language.fontName);
-        Debug.Log(language.tutorials.ToString());
+        font = Resources.Load<Font>("Font/" + language.fontName);
+        RefreshLanguage();
+    }
+
+    private static void RefreshLanguage() {
+        TutorialManager tutorialManager = Object.FindObjectOfType<TutorialManager>();
+        tutorialManager?.RefreshText();
+
+        TileMenuScroll tileMenuScroll = Object.FindObjectOfType<TileMenuScroll>();
+        tileMenuScroll?.RefreshMenu();
+    }
+
+    public static int getLangNumber () {
+        return PlayerPrefs.GetInt("Language");
     }
 
     public static string getLangSufix () {
         return ((Langs)PlayerPrefs.GetInt("Language")).ToString();
     }
 
+    public static string rand(string[] array) {
+        return array[new System.Random().Next(0, array.Length)];
+    }
+
     public class Language {
 
         public string fontName;
 
+        public string level;
+
+        public string toMenu;
+        public string continueT;
+        public string nextLevel;
+
+        public string[] statusInProgress;
+        public string[] statusCompleted;
+
         public string[] tutorials;
+
+        public override string ToString() {
+            return "Language info\n" +
+                "Font name: " + fontName +
+                "\nLevel: " + level +
+                "\nStatus \"in progress\": " + statusInProgress +
+                "\nStatus \"Completed\": " + statusCompleted +
+                "\nTutorials: " + tutorials;
+        }
 
     }
 

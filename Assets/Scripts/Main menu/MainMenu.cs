@@ -18,8 +18,8 @@ public class MainMenu : MonoBehaviour
     private void Start() {
         Application.targetFrameRate = 60;
         Game.isActive = false;
+
         LanguageManager.ChooseLanguage();
-        languageChangeLable.text = LanguageManager.getLangSufix().ToUpper();
         //if (!Game.AudioManager.IsPlaying("MainMenu"))
         Game.AudioManager.Loop("MainMenu");
 

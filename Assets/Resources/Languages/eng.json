@@ -1,16 +1,20 @@
 {
     "fontName" : "CAVOLINI",
+    "level": "Level",
+    "toMenu": "To menu",
+    "continueT": "Continue",
+    "nextLevel": "Next level",
+    "statusInProgress": [
+        "Good luck!",
+        "You will succeed!"
+    ],
+    "statusCompleted": [
+        "Level passed!",
+        "Good job!"
+    ],
     "tutorials" : [
         "Drag tile on free cages of the map. Level is completed if all tiles are located at the map.",
         "Click on free tile to rotate it. Click on tile located at map to release it.",
-        "Using cavemen located in the tiles, we need to block the mammoth’s way to the outside. The mammoth’s ways is also blocked by trees, shrubs, and similar objects. Mammoths always can move in 4 directions and rotate anywhere.", 
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Using cavemen located in the tiles, we need to block the mammoth’s way to the outside. The mammoth’s ways is also blocked by trees, shrubs, and similar objects. Mammoths always can move in 4 directions and rotate anywhere."
     ]
 }

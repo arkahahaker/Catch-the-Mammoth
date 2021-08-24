@@ -30,9 +30,9 @@ public class WinChecker : MonoBehaviour
             return;
         Game.isActive = false;
         if (!Singleton.CanEscape()) {
-            if (Game.CurrentLevel > PlayerPrefs.GetInt("CompletedLevels"))
+            if (!Game.IsLevelCompleted())
                 PlayerPrefs.SetInt("CompletedLevels", Game.CurrentLevel);
-            GameMenu.ShowWinMenu();
+            GameMenu.Singleton.CompleteLevel();
         }
     }
 
@@ -165,12 +165,12 @@ public class WinChecker : MonoBehaviour
             way.Add((finalCage.X, finalCage.Y - 1));
         }
 
-        Debug.Log("(X, Y) [" + way.Count + "]:");
+        /*Debug.Log("(X, Y) [" + way.Count + "]:");
 
         foreach ((int, int) ints in way) {
             Debug.Log(ints.Item1);
             Debug.Log(ints.Item2);
-        }
+        }*/
 
         StartCoroutine(ShowLoseWay(way));
 

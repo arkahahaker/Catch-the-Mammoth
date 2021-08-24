@@ -19,4 +19,8 @@ public class Game
     public static AudioManager AudioManager;
     public static AdsManager AdsManager;
 
+    public static bool IsLevelCompleted () {
+        return CurrentLevel <= PlayerPrefs.GetInt("CompletedLevels");
+    }
+
 }

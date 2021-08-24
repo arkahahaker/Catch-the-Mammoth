@@ -9,9 +9,10 @@ public class DragableTileNotTurnable : DragableTile {
 
     #region OnClick
     public override void OnPointerClick(PointerEventData eventData) {
+        if (!TileMenuScroll.Singleton.canActing()) return;
         if (isDraging)
             return;
-        if (isSet) {
+        if (IsSet) {
             RemoveFromMap();
             StartCoroutine(ReturnToStartPosition());
         }

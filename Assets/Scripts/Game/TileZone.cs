@@ -5,9 +5,15 @@ using UnityEngine;
 public class TileZone : MonoBehaviour
 {
 
+    public static TileZone Singleton;
+
+    public Transform UnsetTilesParent;
+    public Transform SetTilesParent;
+
     public List<DragableTile> tiles;
 
     public void Awake() {
+        Singleton = this;
         tiles.AddRange(FindObjectsOfType<DragableTile>());
     }
 
@@ -20,14 +26,14 @@ public class TileZone : MonoBehaviour
             return null;
         while (true) {
             DragableTile tile = GetRandomTile();
-            if (!tile.isSet)
+            if (!tile.IsSet)
                 return tile;
         }
     }
 
     public bool AllSet () {
         foreach (var tile in tiles) {
-            if (!tile.isSet)
+            if (!tile.IsSet)
                 return false;
         }
         return true;

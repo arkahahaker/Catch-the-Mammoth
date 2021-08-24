@@ -12,7 +12,16 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public List<GameObject> RaycastPoints;
     public List<Cage> OccupiedCages;
 
-    public bool isSet { get; set; }
+
+    private bool isSet;
+    public bool IsSet { get { return isSet; } 
+        set { 
+            isSet = value;
+            transform.parent = value ?
+                TileZone.Singleton.SetTilesParent :
+                TileZone.Singleton.UnsetTilesParent;
+        }
+    }
     protected bool isDraging { get; set; }
     private bool isTip { get; set; }
 
@@ -59,7 +68,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (isExtended)
             ResizeInMoment();
 
-        isSet = false;
+        IsSet = false;
         isDraging = false;
         isTip = false;
 
@@ -102,9 +111,10 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     #region OnClick
     public virtual void OnPointerClick(PointerEventData eventData) {
+        if (!TileMenuScroll.Singleton.canActing()) return;
         if (isDraging)
             return;
-        if (isSet) {
+        if (IsSet) {
             RemoveFromMap();
             StartCoroutine(ReturnToStartPosition());
         } else {
@@ -118,14 +128,14 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData) {
         
-        if (!Game.isActive)
+        if (!Game.isActive || !TileMenuScroll.Singleton.canActing())
             return;
 
         isDraging = true;
         StopCoroutine(ReturnToStartPosition());
         if (!isExtended)
             StartCoroutine(Resize());
-        if (isSet) {
+        if (IsSet) {
             RemoveFromMap();
         }
         dragDistanceFromMiddle = (Vector2)t.position - eventData.position;
@@ -136,7 +146,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
 
     public void OnDrag(PointerEventData data) {
-        if (!Game.isActive)
+        if (!Game.isActive || !TileMenuScroll.Singleton.canActing())
             return;
         if (isDraging)
             SetDraggedPosition(data);
@@ -172,10 +182,10 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             cage.isCaveman = false;
         }
         OccupiedCages.Clear();
-        isSet = false;
+        IsSet = false;
     }
 
-    protected IEnumerator ReturnToStartPosition() {
+    public IEnumerator ReturnToStartPosition() {
         if (isExtended)
             StartCoroutine(Resize());
         yield return TranslateTo(startPosition, 30, .01f);

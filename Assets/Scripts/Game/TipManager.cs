@@ -36,7 +36,7 @@ public class TipManager : MonoBehaviour
     }
 
     public void UseTip () {
-        if (Game.isActive && !TileZone.AllSet()) {
+        if (Game.isActive && !TileZone.AllSet() && TileMenuScroll.Singleton.canActing()) {
             StartCoroutine(TileZone.GetRandomUnsetTile().SetTileByTip());
             SpendOneTip();
             RefreshButton();
