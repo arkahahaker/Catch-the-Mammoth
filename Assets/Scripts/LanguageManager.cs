@@ -41,6 +41,9 @@ public class LanguageManager {
 
         TileMenuScroll tileMenuScroll = Object.FindObjectOfType<TileMenuScroll>();
         tileMenuScroll?.RefreshMenu();
+
+        ProgressBar progressBar = Object.FindObjectOfType<ProgressBar>();
+        progressBar?.RefreshText();
     }
 
     public static int getLangNumber () {
@@ -52,7 +55,7 @@ public class LanguageManager {
     }
 
     public static string rand(string[] array) {
-        return array[new System.Random().Next(0, array.Length)];
+        return array[new System.Random().Next(0, array.Length-1)];
     }
 
     public class Language {
@@ -64,6 +67,8 @@ public class LanguageManager {
         public string toMenu;
         public string continueT;
         public string nextLevel;
+
+        public string levelsCompleted;
 
         public string[] statusInProgress;
         public string[] statusCompleted;

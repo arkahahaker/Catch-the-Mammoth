@@ -28,10 +28,10 @@ public class WinChecker : MonoBehaviour
     public static void CheckWin() {
         if (!Singleton.tileZone.AllSet())
             return;
-        Game.isActive = false;
+        LevelsManager.isActive = false;
         if (!Singleton.CanEscape()) {
-            if (!Game.IsLevelCompleted())
-                PlayerPrefs.SetInt("CompletedLevels", Game.CurrentLevel);
+            if (!LevelsManager.IsLevelCompleted())
+                PlayerPrefs.SetInt("CompletedLevels", LevelsManager.CurrentLevel);
             GameMenu.Singleton.CompleteLevel();
         }
     }
@@ -120,7 +120,7 @@ public class WinChecker : MonoBehaviour
     }
 
     private void FindWay(Cage finalCage) {
-        Game.AudioManager.Play("Lose");
+        AudioManager.Singleton.Play("Lose");
         List<Cage> cages = new List<Cage>();
         
         cages.Add(finalCage);

@@ -10,9 +10,10 @@ public class Archive : MonoBehaviour
     public Sprite Nothing;
     public Sprite Mammoth;
 
-    void Start()
-    {
-        if (Game.Archive == null) Game.Archive = this;
+    public static Archive Singleton;
+
+    private void Awake() {
+        if (Singleton == null) Singleton = this;
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }

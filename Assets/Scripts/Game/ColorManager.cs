@@ -16,15 +16,15 @@ public class ColorManager : MonoBehaviour
     public void Generate () {
         if (generated) return;
 
-        if (Game.BackgroundColors == null) {
+        if (LevelsManager.BackgroundColors == null) {
             Color color;
             ColorUtility.TryParseHtmlString("#96a952ff", out color);
-            Game.BackgroundColors = new List<Color> { color };
+            LevelsManager.BackgroundColors = new List<Color> { color };
         }
 
-        Colors = Game.BackgroundColors;
+        Colors = LevelsManager.BackgroundColors;
         Color selected = GenerateRandomColor();
-        Game.ChoosenColor = selected;
+        LevelsManager.ChoosenColor = selected;
         Color forTiles = new Color(selected.r - .05f, selected.g - .05f, selected.b - .05f);
         List<DragableTile> tiles = FindObjectOfType<TileZone>().tiles;
         foreach (var tile in tiles) {

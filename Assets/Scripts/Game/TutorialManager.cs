@@ -13,7 +13,7 @@ public class TutorialManager : MonoBehaviour {
         Text tutorial = GameObject.Find("TutorialText").GetComponent<Text>();
 
         if (tutorial != null) {
-            tutorial.text = LanguageManager.language.tutorials[Game.CurrentLevel - 1];
+            tutorial.text = LanguageManager.language.tutorials[LevelsManager.CurrentLevel - 1];
             Font f = LanguageManager.font;
             if (f != null) tutorial.font = f; else Debug.Log("Font doesn't loaded");
         }

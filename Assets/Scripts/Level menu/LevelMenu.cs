@@ -26,30 +26,27 @@ public class LevelMenu : MonoBehaviour {
 
     private void Start() {
 
-        if (Game.AudioManager != null && !Game.AudioManager.IsPlaying("MainMenu"))
-            Game.AudioManager.Loop("MainMenu");
-
-        Game.AudioManager.Stop("LevelTheme1");
+        if (AudioManager.Singleton != null && !AudioManager.Singleton.IsPlaying("MainMenu"))
+            AudioManager.Singleton.Loop("MainMenu");
+        AudioManager.Singleton.Stop("LevelTheme1");
 
         mapSize = Map.GetComponent<RectTransform>().localPosition;
         LevelsStatusSetup();
 
         LevelsToUnlockSlider.minValue = 1;
-        LevelsToUnlockSlider.maxValue = Game.LevelsCount;
+        LevelsToUnlockSlider.maxValue = LevelsManager.LevelsCount;
 
         MapScroller = Map.GetComponent<MapScroller>();
-
-        MapScroller.StartCoroutine(MapScroller.StartFading());
     }
 
     public void LoadLevel(int level) {
         if (PlayerPrefs.GetInt("CompletedLevels") + 1 >= level) {
-            Game.CurrentLevel = level;
-            Game.isActive = true;
+            LevelsManager.CurrentLevel = level;
+            LevelsManager.isActive = true;
             ToMainMenuButton.SetActive(false); 
             StopAllCoroutines();
             MapScroller.StopAllCoroutines();
-            MapScroller.StartCoroutine(MapScroller.ZoomLevel(level));
+            StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("Level" + level));
         }
     }
 
@@ -62,16 +59,15 @@ public class LevelMenu : MonoBehaviour {
             PlayerPrefs.SetInt("CompletedLevels", 0);
         int levels = PlayerPrefs.GetInt("CompletedLevels");
         GameObject background = GameObject.Find("Background");
-        for (int i = 1; i <= levels && i <= Game.LevelsCount; i++)
+        for (int i = 1; i <= levels && i <= LevelsManager.LevelsCount; i++)
             background.transform.GetChild(i - 1).transform.GetChild(0).GetComponent<Image>().sprite = LevelCompleted;
-        if (levels != Game.LevelsCount)
+        if (levels != LevelsManager.LevelsCount)
             background.transform.GetChild(levels).transform.GetChild(0).GetComponent<Image>().sprite = CurrentLevel;
-        for (int i = levels + 2; i <= Game.LevelsCount; i++)
+        for (int i = levels + 2; i <= LevelsManager.LevelsCount; i++)
             background.transform.GetChild(i - 1).transform.GetChild(0).GetComponent<Image>().sprite = LevelLocked;
     }
-
     public void UnlockAllLevels() {
-        PlayerPrefs.SetInt("CompletedLevels", Game.LevelsCount);
+        PlayerPrefs.SetInt("CompletedLevels", LevelsManager.LevelsCount);
         SceneManager.LoadScene("LevelsMenu");
     }
 

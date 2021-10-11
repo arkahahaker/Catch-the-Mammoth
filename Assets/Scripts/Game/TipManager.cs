@@ -36,7 +36,7 @@ public class TipManager : MonoBehaviour
     }
 
     public void UseTip () {
-        if (Game.isActive && !TileZone.AllSet() && TileMenuScroll.Singleton.canActing()) {
+        if (LevelsManager.isActive && !TileZone.AllSet() && TileMenuScroll.Singleton.canActing()) {
             StartCoroutine(TileZone.GetRandomUnsetTile().SetTileByTip());
             SpendOneTip();
             RefreshButton();
@@ -44,8 +44,7 @@ public class TipManager : MonoBehaviour
     }
 
     public void BuyTip () {
-        Game.AdsManager.ShowRewardedVideo();
-        //SetTipsCount(GetTipsCount() + 1);
+        AdsManager.Singleton.ShowRewardedVideo();
         RefreshButton();
     }
 

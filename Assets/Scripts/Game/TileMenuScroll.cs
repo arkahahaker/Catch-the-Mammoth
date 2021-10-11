@@ -44,10 +44,10 @@ public class TileMenuScroll : MonoBehaviour
     }
 
     public void RefreshMenu() {
-        StatusTitle.text = LanguageManager.rand(Game.IsLevelCompleted() ?
+        StatusTitle.text = LanguageManager.rand(LevelsManager.IsLevelCompleted() ?
             LanguageManager.language.statusCompleted :
             LanguageManager.language.statusInProgress);
-        LevelTitle.text = LanguageManager.language.level + " " + Game.CurrentLevel;
+        LevelTitle.text = LanguageManager.language.level + " " + LevelsManager.CurrentLevel;
         ContinueText.text = LanguageManager.language.continueT;
         ToMenuText.text = LanguageManager.language.toMenu;
         NextLevelText.text = LanguageManager.language.nextLevel;

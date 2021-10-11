@@ -11,11 +11,11 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener {
 
     private static readonly bool testmode = false;
 
-
+    public static AdsManager Singleton;
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
-        if (Game.AdsManager == null) Game.AdsManager = this;
+        if (Singleton == null) Singleton = this;
         else Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
         checkInit();
         Advertisement.AddListener(this);
         Advertisement.Load(interstitial);

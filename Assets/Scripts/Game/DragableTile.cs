@@ -14,12 +14,15 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
 
     private bool isSet;
-    public bool IsSet { get { return isSet; } 
+    public bool IsSet { 
+        get { 
+            return isSet; 
+        }
         set { 
             isSet = value;
-            transform.parent = value ?
+            transform.SetParent( value ?
                 TileZone.Singleton.SetTilesParent :
-                TileZone.Singleton.UnsetTilesParent;
+                TileZone.Singleton.UnsetTilesParent);
         }
     }
     protected bool isDraging { get; set; }
@@ -128,7 +131,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData) {
         
-        if (!Game.isActive || !TileMenuScroll.Singleton.canActing())
+        if (!LevelsManager.isActive || !TileMenuScroll.Singleton.canActing())
             return;
 
         isDraging = true;
@@ -146,7 +149,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
 
     public void OnDrag(PointerEventData data) {
-        if (!Game.isActive || !TileMenuScroll.Singleton.canActing())
+        if (!LevelsManager.isActive || !TileMenuScroll.Singleton.canActing())
             return;
         if (isDraging)
             SetDraggedPosition(data);
@@ -192,14 +195,14 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
 
     private IEnumerator TranslateTo (Vector2 position, int framesCount, float framesTime) {
-        Game.isActive = false;
+        LevelsManager.isActive = false;
         Vector2 distancePerFrame = (position - (Vector2)transform.localPosition) / framesCount;
         for (int i = 0; i < framesCount; i++) {
             transform.localPosition = (Vector2)transform.localPosition + distancePerFrame;
             yield return new WaitForSeconds(framesTime);
         }
         transform.localPosition = position;
-        Game.isActive = true;
+        LevelsManager.isActive = true;
         yield return null;
     }
     #endregion
@@ -263,7 +266,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     [SerializeField] float trueRotation;
 
     public IEnumerator SetTileByTip () {
-        Game.isActive = false;
+        LevelsManager.isActive = false;
         isTip = true;
 
         yield return Resize();
@@ -272,7 +275,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
         Map.Get.SetTile(this);
 
-        Game.isActive = true;
+        LevelsManager.isActive = true;
     }
     #endregion
 

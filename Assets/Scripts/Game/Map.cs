@@ -30,8 +30,8 @@ public class Map : MonoBehaviour
 
     private void Initialize () {
 
-        if (Game.AudioManager != null)
-            Game.AudioManager.Loop("LevelTheme1");
+        if (AudioManager.Singleton != null)
+            AudioManager.Singleton.Loop("LevelTheme1");
 
         GameObject startCage = GameObject.FindGameObjectWithTag("Start cage");
         CagesWidth = (int)startCage.GetComponent<RectTransform>().rect.width;
@@ -50,7 +50,7 @@ public class Map : MonoBehaviour
         GameObject Mammoth = GameObject.FindGameObjectWithTag("Mammoth");
         MammothX = (int)(Mammoth.GetComponent<RectTransform>().localPosition.x - StartX) / CagesWidth;
         MammothY = (int)(StartY - Mammoth.GetComponent<RectTransform>().localPosition.y) / CagesHeight;
-        Game.isActive = true;
+        LevelsManager.isActive = true;
     }
     #endregion
 

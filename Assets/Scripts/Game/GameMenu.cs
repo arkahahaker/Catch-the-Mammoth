@@ -24,20 +24,20 @@ public class GameMenu : MonoBehaviour
     }
 
     public void NextLevel () {
-        if (Game.CurrentLevel != Game.LevelsCount) {
-            SceneManager.LoadScene("Level" + (Game.CurrentLevel + 1));
-            Game.CurrentLevel++;
+        if (LevelsManager.CurrentLevel != LevelsManager.LevelsCount) {
+            LevelsManager.CurrentLevel++;
+            StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("Level" + LevelsManager.CurrentLevel));
         } else {
-            SceneManager.LoadScene("LevelsMenu");
+            StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("LevelsMenu"));
         }
     }
 
     public void Restart () {
-        SceneManager.LoadScene("Level" + Game.CurrentLevel);
+        StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("Level" + LevelsManager.CurrentLevel));
     }
 
     public void ToMenu () {
-        SceneManager.LoadScene("LevelsMenu");
+        StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("LevelsMenu"));
     }
 
 }

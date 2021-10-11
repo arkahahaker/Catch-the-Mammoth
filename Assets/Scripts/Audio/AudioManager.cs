@@ -21,9 +21,10 @@ public class AudioManager : MonoBehaviour {
     }
 
     [SerializeField] private List<Sound> Sounds;
+    public static AudioManager Singleton;
 
     private void Awake () {
-        if (Game.AudioManager == null) Game.AudioManager = this;
+        if (Singleton == null) Singleton = this;
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         foreach (Sound s in Sounds) {
