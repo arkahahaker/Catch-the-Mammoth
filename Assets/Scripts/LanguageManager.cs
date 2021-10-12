@@ -44,6 +44,9 @@ public class LanguageManager {
 
         ProgressBar progressBar = Object.FindObjectOfType<ProgressBar>();
         progressBar?.RefreshText();
+
+        MainMenuMap map = Object.FindObjectOfType<MainMenuMap>();
+        map?.RefreshText();
     }
 
     public static int getLangNumber () {
@@ -69,6 +72,7 @@ public class LanguageManager {
         public string nextLevel;
 
         public string levelsCompleted;
+        public string tapTheMapToPlay;
 
         public string[] statusInProgress;
         public string[] statusCompleted;
