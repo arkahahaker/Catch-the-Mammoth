@@ -466,7 +466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ccc2bf0b3902124b87578d9226cfb36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f058086d3f8c7c345adb1451fda280e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -880,8 +880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - name: MainMenu
-    clip: {fileID: 8300000, guid: 895bf9a8bb9b6ef4a8131f1142e3e9bd, type: 3}
-    volume: 0.041
+    clip: {fileID: 8300000, guid: 479fc6ec1c7b25f409f38513e39a3db1, type: 3}
+    volume: 0.3
     source: {fileID: 0}
   - name: Lose
     clip: {fileID: 8300000, guid: 78064d45addd35d4da7cd1a19c6d119c, type: 3}
@@ -892,8 +892,12 @@ MonoBehaviour:
     volume: 0.188
     source: {fileID: 0}
   - name: LevelTheme1
-    clip: {fileID: 8300000, guid: d084f8d9793902a4297d5a68df2906dc, type: 3}
-    volume: 0.09
+    clip: {fileID: 8300000, guid: 9f66da1e95ae02c4a9794ccee813d404, type: 3}
+    volume: 0.3
+    source: {fileID: 0}
+  - name: LevelTheme2
+    clip: {fileID: 8300000, guid: ce7b21bd0c7ec8f44883ae9a3236e86a, type: 3}
+    volume: 0.3
     source: {fileID: 0}
 --- !u!4 &486970260
 Transform:

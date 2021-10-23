@@ -18,6 +18,7 @@ public class AudioButton : MonoBehaviour {
     }
     public void TurnAudio() {
         AudioManager.Singleton.IsAudioOn = !AudioManager.Singleton.IsAudioOn;
+        PlayerPrefs.SetInt("audio", AudioManager.Singleton.IsAudioOn ? 1 : 0);
         ChangeSprite();
     }
 

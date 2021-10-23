@@ -30,8 +30,20 @@ public class Map : MonoBehaviour
 
     private void Initialize () {
 
-        if (AudioManager.Singleton != null)
-            AudioManager.Singleton.Loop("LevelTheme1");
+        if (AudioManager.Singleton != null) {
+            if (AudioManager.Singleton.IsPlaying("MainMenu")) {
+                AudioManager.Singleton.Stop("MainMenu");
+                AudioManager.Singleton.Loop(Random.Range(0, 2) < 0.5 ? "LevelTheme1" : "LevelTheme2");
+            } else if (AudioManager.Singleton.IsPlaying("LevelTheme1")) {
+                AudioManager.Singleton.Stop("LevelTheme1");
+                AudioManager.Singleton.Loop("LevelTheme2");
+            } else if (AudioManager.Singleton.IsPlaying("LevelTheme2")) {
+                AudioManager.Singleton.Stop("LevelTheme2");
+                AudioManager.Singleton.Loop("LevelTheme1");
+            } else {
+                AudioManager.Singleton.Loop(Random.Range(0, 1) < 0.5 ? "LevelTheme1" : "LevelTheme2");
+            }
+        }
 
         GameObject startCage = GameObject.FindGameObjectWithTag("Start cage");
         CagesWidth = (int)startCage.GetComponent<RectTransform>().rect.width;

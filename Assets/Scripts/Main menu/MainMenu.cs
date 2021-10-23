@@ -25,7 +25,8 @@ public class MainMenu : MonoBehaviour
 
         LanguageManager.ChooseLanguage();
 
-        AudioManager.Singleton.Loop("MainMenu");
+        if (!AudioManager.Singleton.IsPlaying("MainMenu"))
+            AudioManager.Singleton.Loop("MainMenu");
     }
 
     public void Play() {

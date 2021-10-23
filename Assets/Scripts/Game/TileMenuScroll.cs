@@ -44,6 +44,8 @@ public class TileMenuScroll : MonoBehaviour
     }
 
     public void RefreshMenu() {
+        Font current = LanguageManager.font;
+
         StatusTitle.text = LanguageManager.rand(LevelsManager.IsLevelCompleted() ?
             LanguageManager.language.statusCompleted :
             LanguageManager.language.statusInProgress);
@@ -51,6 +53,12 @@ public class TileMenuScroll : MonoBehaviour
         ContinueText.text = LanguageManager.language.continueT;
         ToMenuText.text = LanguageManager.language.toMenu;
         NextLevelText.text = LanguageManager.language.nextLevel;
+        
+        StatusTitle.font = current;
+        LevelTitle.font = current;
+        ContinueText.font = current;
+        ToMenuText.font = current;
+        NextLevelText.font = current;
     }
 
     /// <summary>
@@ -65,20 +73,20 @@ public class TileMenuScroll : MonoBehaviour
     private IEnumerator TurnCoroutine () {
         turning = true;
 
-        int frames = 180;
-        float turnTime = 1f;
+        int frames = 90;
+        float turnTime = 0.5f;
 
         int halfFrames = frames / 2;
         float frameTime = turnTime / frames;
 
         for (int i = 0; i < halfFrames; i++) {
-            transform.Rotate(Vector3.up, 1f);
+            transform.Rotate(Vector3.up, 180f / frames);
             yield return new WaitForSeconds(frameTime);
         }
         foreach (GameObject menuObj in MenuObjects) menuObj.SetActive(!isMenu);
         foreach (GameObject tsObj in TileSideObjects) tsObj.SetActive(isMenu);
         for (int i = 0; i < halfFrames; i++) {
-            transform.Rotate(Vector3.up, 1f);
+            transform.Rotate(Vector3.up, 180f / frames);
             yield return new WaitForSeconds(frameTime);
         }
         turning = false;

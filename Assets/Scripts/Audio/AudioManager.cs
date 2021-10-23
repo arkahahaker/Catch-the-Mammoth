@@ -24,6 +24,10 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager Singleton;
 
     private void Awake () {
+        if (PlayerPrefs.HasKey("audio")) {
+            PlayerPrefs.SetInt("audio", 1);
+        }
+        isAudioOn = PlayerPrefs.GetInt("audio") == 1;
         if (Singleton == null) Singleton = this;
         else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);

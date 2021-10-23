@@ -26,9 +26,17 @@ public class LevelMenu : MonoBehaviour {
 
     private void Start() {
 
-        if (AudioManager.Singleton != null && !AudioManager.Singleton.IsPlaying("MainMenu"))
-            AudioManager.Singleton.Loop("MainMenu");
-        AudioManager.Singleton.Stop("LevelTheme1");
+        if (AudioManager.Singleton != null) {
+            if (AudioManager.Singleton.IsPlaying("LevelTheme1")) {
+                AudioManager.Singleton.Stop("LevelTheme1");
+                AudioManager.Singleton.Loop("MainMenu");
+            } else if (AudioManager.Singleton.IsPlaying("LevelTheme2")) {
+                AudioManager.Singleton.Stop("LevelTheme2");
+                AudioManager.Singleton.Loop("MainMenu");
+            } else if (!AudioManager.Singleton.IsPlaying("MainMenu")) {
+                AudioManager.Singleton.Loop("MainMenu");
+            }
+        }
 
         mapSize = Map.GetComponent<RectTransform>().localPosition;
         LevelsStatusSetup();
