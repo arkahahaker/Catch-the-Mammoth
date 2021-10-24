@@ -102,7 +102,17 @@ public class WinChecker : MonoBehaviour
         List<GameObject> pointers = new List<GameObject>();
         StartCoroutine(RemoveLoseWay(pointers));
         for (int i = 0;i<wayToShow.Count;i++) {
-            GameObject pointer = Instantiate(wayPointerPrefab, new Vector2(), Quaternion.identity, wayPointersParent.transform);
+
+            int xMove, yMove;   // Discovering in which side does that trail looks
+            if (i != wayToShow.Count - 1)
+                xMove = wayToShow[i + 1].Item1 - wayToShow[i].Item1;
+            else xMove = wayToShow[i].Item1 < 0 ? -1 : (wayToShow[i].Item1==Map.Get.Columns ? 1 : 0);
+            if (i != wayToShow.Count - 1)
+                yMove = wayToShow[i + 1].Item2 - wayToShow[i].Item2;
+            else yMove = wayToShow[i].Item2 < 0 ? -1 : (wayToShow[i].Item2 == Map.Get.Rows ? 1 : 0);
+            Quaternion rotation = Quaternion.Euler(0, 0, xMove == 1 ? -90 : (yMove == -1 ? 0 : (xMove == -1 ? 90 : 180))); // determine rotation of the trail
+
+            GameObject pointer = Instantiate(wayPointerPrefab, new Vector2(), rotation, wayPointersParent.transform);
             pointer.transform.localPosition = new Vector2(Map.Get.StartX + wayToShow[i].Item1 * Map.Get.CagesWidth + Map.Get.CagesWidth/2, Map.Get.StartY - wayToShow[i].Item2 * Map.Get.CagesHeight - Map.Get.CagesHeight/2);
             pointers.Add(pointer);
             yield return new WaitForSeconds(newPointerSpawnLatency);
