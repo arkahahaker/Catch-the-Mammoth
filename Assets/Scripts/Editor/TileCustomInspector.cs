@@ -4,39 +4,55 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(DragableTile))]
+[CanEditMultipleObjects]
 public class TileCustomInspector : Editor
 {
-
     
     public override void OnInspectorGUI() {
 
-        DragableTile tile = (DragableTile)target;
+        Object[] objs = targets;
+
+        base.OnInspectorGUI();
+
+        serializedObject.Update();
+
+        DragableTile[] tiles = new DragableTile[objs.Length];
+        for (int i = 0; i < objs.Length; i++)
+            tiles[i] = (DragableTile)objs[i];
 
         base.OnInspectorGUI();
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Resize")) {
-            tile.ResizeInMoment();
+            foreach (DragableTile tile in tiles)
+                tile.ResizeInMoment();
         }
         if (GUILayout.Button("Turn")) {
-            tile.TurnInMoment();
+            foreach (DragableTile tile in tiles)
+                tile.TurnInMoment();
         }
         GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Save Tip")) {
-            tile.SavePositionForTip();
+            foreach (DragableTile tile in tiles)
+                tile.SavePositionForTip();
         }
         if (GUILayout.Button("Save Home")) {
-            tile.SavePositionForHome();
+            foreach (DragableTile tile in tiles)
+                tile.SavePositionForHome();
         }
         GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Load Tip")) {
-            tile.LoadPositionForTip();
+            foreach (DragableTile tile in tiles)
+                tile.LoadPositionForTip();
         }
         if (GUILayout.Button("Load Home")) {
-            tile.LoadPositionForHome();
+            foreach (DragableTile tile in tiles)
+                tile.LoadPositionForHome();
         }
         GUILayout.EndHorizontal();
+
+        serializedObject.ApplyModifiedProperties();
     }
 
 }

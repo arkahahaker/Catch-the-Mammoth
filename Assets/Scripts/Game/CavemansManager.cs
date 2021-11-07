@@ -18,7 +18,12 @@ public class CavemansManager : MonoBehaviour {
             } while (chosenElls[temp]);
             chosenElls[temp] = true;
             GameObject newCav = Instantiate(CavemenPrefabs[temp], cs[i].transform.position, cs[i].transform.rotation, cs[i].transform.parent);
-            GameObject newSkin = Instantiate(SkinSet.Current.Skins[temp], cs[i].transform.position, cs[i].transform.rotation, cs[i].transform.GetChild(0));
+            Destroy(newCav.transform.GetChild(0).GetChild(0).gameObject);
+            GameObject Skin = Instantiate(SkinSetsManager.SkinSet.Skins[temp], newCav.transform.GetChild(0));
+            //Skin.transform.Translate(newCav.transform.position);
+            Destroy(cs[i].gameObject);
+            newCav.transform.parent.parent.GetComponent<DragableTile>().Setup();
+            
         }
     }
 

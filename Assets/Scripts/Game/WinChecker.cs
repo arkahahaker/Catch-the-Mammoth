@@ -25,6 +25,7 @@ public class WinChecker : MonoBehaviour
     #endregion Singleton
 
     #region Chekers
+
     public static void CheckWin() {
         if (!Singleton.tileZone.AllSet())
             return;

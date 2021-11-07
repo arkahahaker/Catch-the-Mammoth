@@ -408,6 +408,52 @@ MonoBehaviour:
   Colors:
   - {r: 0.5882353, g: 0.6627451, b: 0.32156864, a: 1}
   languageChangeLable: {fileID: 0}
+--- !u!1 &153825882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153825884}
+  - component: {fileID: 153825883}
+  m_Layer: 0
+  m_Name: SkinsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &153825883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153825882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2dba7078220cb4391f17e7d4dcb188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinSet0: {fileID: 7204807118967210179, guid: 8087f0cb901a73041a485b988b70ccb3, type: 3}
+  skinSet1: {fileID: 0}
+  skinSet2: {fileID: 0}
+--- !u!4 &153825884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153825882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 137.38908, y: 293.908, z: -5537.833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161195692
 GameObject:
   m_ObjectHideFlags: 0

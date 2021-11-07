@@ -101,7 +101,7 @@ public class Map : MonoBehaviour
 
             tile.IsSet = true;
 
-            tile.transform.parent = TileZone.Singleton.SetTilesParent;
+            tile.transform.SetParent(TileZone.Singleton.SetTilesParent);
 
             WinChecker.CheckWin();
         } else {

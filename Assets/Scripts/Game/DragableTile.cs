@@ -39,7 +39,11 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     #region Start Actions
     protected void Start() {
 
+        Setup();
+        
+    }
 
+    public void Setup () {
         GameObject pointsParent = transform.GetChild(0).gameObject;
 
         RaycastPoints = new List<GameObject>();
@@ -64,7 +68,7 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             t.localPosition = startPosition;
 
         if (startRotation != Vector3.zero)
-           t.localEulerAngles = startRotation;
+            t.localEulerAngles = startRotation;
 
         cavt.localEulerAngles = -t.localEulerAngles;
 

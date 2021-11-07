@@ -23,6 +23,7 @@ public class TileMenuScroll : MonoBehaviour
     [SerializeField] List<GameObject> TileSideObjects;
 
     private bool isMenu;
+    private bool levelCompleted;
     public bool IsMenu { get { return isMenu; } set { isMenu = value; } }
 
     private void Start () {
@@ -34,6 +35,7 @@ public class TileMenuScroll : MonoBehaviour
     }
 
     public void CompleteLevel() {
+        levelCompleted = true;
         StatusTitle.text = LanguageManager.rand(LanguageManager.language.statusCompleted);
         Turn();
     }
@@ -46,9 +48,7 @@ public class TileMenuScroll : MonoBehaviour
     public void RefreshMenu() {
         Font current = LanguageManager.font;
 
-        StatusTitle.text = LanguageManager.rand(LevelsManager.IsLevelCompleted() ?
-            LanguageManager.language.statusCompleted :
-            LanguageManager.language.statusInProgress);
+        StatusTitle.text = LanguageManager.rand(levelCompleted ? LanguageManager.language.statusCompleted : LanguageManager.language.statusInProgress);
         LevelTitle.text = LanguageManager.language.level + " " + LevelsManager.CurrentLevel;
         ContinueText.text = LanguageManager.language.continueT;
         ToMenuText.text = LanguageManager.language.toMenu;

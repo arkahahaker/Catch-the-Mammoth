@@ -14,16 +14,18 @@ public class Caveman : MonoBehaviour
     private Vector2 startOwnSize;
     private Vector2 startSkinPos;
 
-    private void Start() {
+    public void UpdateSkin() {
         SkinLocator = transform.GetChild(0).GetComponent<RectTransform>();
         Skin = SkinLocator.transform.GetChild(0).GetComponent<RectTransform>();
         Own = GetComponent<RectTransform>();
         sizeSkinRatio = new Vector2(Skin.sizeDelta.x / Own.sizeDelta.x, Skin.sizeDelta.y / Own.sizeDelta.y);
         startSkinPos = Skin.localPosition;
         startOwnSize = Own.sizeDelta;
+        Debug.Log(Skin.gameObject.name);
     }
 
     private void Update () {
+        if (Skin == null) UpdateSkin();
         Skin.sizeDelta = Vector2.Scale(Own.sizeDelta, sizeSkinRatio);
         SkinLocator.localPosition = Vector2.Scale(startSkinPos, new Vector2(
                 (Own.sizeDelta.x / startOwnSize.x - 1),
