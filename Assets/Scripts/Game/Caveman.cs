@@ -5,9 +5,10 @@ using UnityEngine;
 public class Caveman : MonoBehaviour
 {
 
-    private RectTransform Skin;
-    private RectTransform SkinLocator;
-    private RectTransform Own;
+    private RectTransform Skin; // skin that have animation. DO NOT MOVE IT VIA SCRIPT. Move SkinLocator
+    private RectTransform SkinLocator; // child of this object, that is parent of skin, but skin animation
+                                       // don't affect it. Using for move skin regarding caveman
+    private RectTransform Own; // rectTransform of the object
 
     private Vector2 sizeSkinRatio;
     private Vector2 startOwnSize;
