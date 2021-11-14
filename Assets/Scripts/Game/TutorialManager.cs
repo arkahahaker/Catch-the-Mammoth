@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class TutorialManager : MonoBehaviour {
 
@@ -10,7 +9,7 @@ public class TutorialManager : MonoBehaviour {
     }
 
     public void RefreshText() {
-        Text tutorial = GameObject.Find("TutorialText").GetComponent<Text>();
+        Text tutorial = Resources.FindObjectsOfTypeAll<Text>().Where(t => { return t.gameObject.name == "TutorialText"; }).First();
 
         if (tutorial != null) {
             tutorial.text = LanguageManager.language.tutorials[LevelsManager.CurrentLevel - 1];

@@ -21,7 +21,6 @@ public class Caveman : MonoBehaviour
         sizeSkinRatio = new Vector2(Skin.sizeDelta.x / Own.sizeDelta.x, Skin.sizeDelta.y / Own.sizeDelta.y);
         startSkinPos = Skin.localPosition;
         startOwnSize = Own.sizeDelta;
-        Debug.Log(Skin.gameObject.name);
     }
 
     private void Update () {

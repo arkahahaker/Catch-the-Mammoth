@@ -8,7 +8,7 @@ public class LevelsManager {
     public static int CurrentLevel;
     public static bool isActive;
 
-    public static int LevelsCount = 10;
+    public static int LevelsCount = 16;
 
     public static List<Color> BackgroundColors;
 

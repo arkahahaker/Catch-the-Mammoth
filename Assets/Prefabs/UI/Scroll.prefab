@@ -243,6 +243,7 @@ MonoBehaviour:
   ContinueText: {fileID: 6510313254147671933}
   NextLevelText: {fileID: 6510313254573026667}
   ToMenuText: {fileID: 6510313252901409667}
+  ToNextLevelButton: {fileID: 6510313253565104419}
   MenuObjects:
   - {fileID: 6510313254375481752}
   TileSideObjects:
@@ -1723,6 +1724,18 @@ PrefabInstance:
     - target: {fileID: 1450135785874627164, guid: 32340075b39f1d649a58d393ac61ca1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450135785874627165, guid: 32340075b39f1d649a58d393ac61ca1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6510313252745272203}
+    - target: {fileID: 1450135785874627165, guid: 32340075b39f1d649a58d393ac61ca1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450135785874627165, guid: 32340075b39f1d649a58d393ac61ca1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TileMenuScroll, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1450135785874627167, guid: 32340075b39f1d649a58d393ac61ca1c, type: 3}
       propertyPath: m_Name

@@ -16,6 +16,8 @@ public class TileMenuScroll : MonoBehaviour
     public Text NextLevelText;
     public Text ToMenuText;
 
+    public Button ToNextLevelButton;
+
     private bool turning;
     private TileZone tileZone;
 
@@ -36,6 +38,7 @@ public class TileMenuScroll : MonoBehaviour
 
     public void CompleteLevel() {
         levelCompleted = true;
+        ToNextLevelButton.interactable = true;
         StatusTitle.text = LanguageManager.rand(LanguageManager.language.statusCompleted);
         Turn();
     }
@@ -59,6 +62,8 @@ public class TileMenuScroll : MonoBehaviour
         ContinueText.font = current;
         ToMenuText.font = current;
         NextLevelText.font = current;
+
+        ToNextLevelButton.interactable = LevelsManager.LevelsCompletedCount + 1 != LevelsManager.CurrentLevel;
     }
 
     /// <summary>
@@ -93,6 +98,9 @@ public class TileMenuScroll : MonoBehaviour
         isMenu = !isMenu;
     }
 
+    public void NextLevel() {
+        FindObjectOfType<GameMenu>().NextLevel();
+    }
     
 
 }

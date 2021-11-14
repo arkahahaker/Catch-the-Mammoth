@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,21 +61,12 @@ public class EditorCageEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
 
-    }
-
-    private void MakeObstacle () {
-
-    }
-
-    private void FreeCage () {
-
-    }
-
-    private void Mammoth () {
-
-    }
-
-    private void EraseCage () {
+        if (GUI.changed) {
+            foreach (EditorCage cage in cages) {
+                EditorUtility.SetDirty(cage.gameObject.GetComponent<Image>());
+                EditorSceneManager.MarkSceneDirty(cage.gameObject.scene);
+            }
+        }
 
     }
 

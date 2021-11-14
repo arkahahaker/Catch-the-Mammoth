@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(DragableTile))]
 [CanEditMultipleObjects]
@@ -37,8 +38,9 @@ public class TileCustomInspector : Editor
                 tile.SavePositionForTip();
         }
         if (GUILayout.Button("Save Home")) {
-            foreach (DragableTile tile in tiles)
+            foreach (DragableTile tile in tiles) {
                 tile.SavePositionForHome();
+            }
         }
         GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
@@ -53,6 +55,12 @@ public class TileCustomInspector : Editor
         GUILayout.EndHorizontal();
 
         serializedObject.ApplyModifiedProperties();
+        if (GUI.changed) {
+            foreach (DragableTile tile in tiles) { 
+                EditorUtility.SetDirty(tile);
+                EditorSceneManager.MarkSceneDirty(tile.gameObject.scene);
+            }
+        }
     }
 
 }
