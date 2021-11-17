@@ -823,6 +823,22 @@ PrefabInstance:
       value: 37.5
       objectReference: {fileID: 0}
     - target: {fileID: 4011448896275786642, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+      propertyPath: Caveman
+      value: 
+      objectReference: {fileID: 535254509}
+    - target: {fileID: 4011448896275786642, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+      propertyPath: isExtended
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011448896275786642, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+      propertyPath: truePosition.x
+      value: -411
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011448896275786642, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+      propertyPath: truePosition.y
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011448896275786642, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
       propertyPath: startPosition.x
       value: 475
       objectReference: {fileID: 0}
@@ -924,6 +940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+--- !u!1 &535254509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8259863174039159593, guid: 26dd66fc632eea342b033bdc2fcaa748, type: 3}
+  m_PrefabInstance: {fileID: 535254508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &559187933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1949,26 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+      propertyPath: Caveman
+      value: 
+      objectReference: {fileID: 895324504}
+    - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+      propertyPath: isExtended
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+      propertyPath: trueRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+      propertyPath: truePosition.x
+      value: -321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+      propertyPath: truePosition.y
+      value: -221
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417240718880848599, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
       propertyPath: startPosition.x
       value: 213
       objectReference: {fileID: 0}
@@ -1937,6 +1978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+--- !u!1 &895324504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5664934420587622521, guid: 54fe2bf55ded4364abf35d7a6defc978, type: 3}
+  m_PrefabInstance: {fileID: 895324503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &901940702
 GameObject:
   m_ObjectHideFlags: 0

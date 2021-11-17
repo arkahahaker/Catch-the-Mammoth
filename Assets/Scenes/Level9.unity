@@ -1013,7 +1013,6 @@ GameObject:
   m_Component:
   - component: {fileID: 673801110}
   - component: {fileID: 673801111}
-  - component: {fileID: 673801112}
   m_Layer: 5
   m_Name: Game
   m_TagString: Untagged
@@ -1057,28 +1056,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPointerPrefab: {fileID: 316199602400478021, guid: d8f141bb23b5fa94c81818a140d3e54a, type: 3}
   wayPointersParent: {fileID: 1999498799}
---- !u!114 &673801112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673801109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca63db56d2ad1b54981aec3427539f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CavemenPrefabs:
-  - {fileID: 3497245359382683864, guid: 1e0d7d77468a58b47ac76db3b9abdce4, type: 3}
-  - {fileID: 5172303495413532483, guid: 5aeb79320ba1b62479b4f2891f725aac, type: 3}
-  - {fileID: 4932422221146155605, guid: 36ca5e2fba7db0148b5834cc11e9f6d9, type: 3}
-  - {fileID: 7620203538652079689, guid: afc4cb80165697e40a0f3802dc37a94d, type: 3}
-  - {fileID: 9172430503493377300, guid: 66ebaf5658533b0409b373a6955b1dff, type: 3}
-  - {fileID: 7746430987955399847, guid: e167d586738c91943938a562a0c3d6e9, type: 3}
-  - {fileID: 4624698924901426337, guid: e523961b6729ba64cbdf5cc609e60b67, type: 3}
-  - {fileID: 7439640553835336126, guid: 20ce16da241ebd44fa59b55d86a1f405, type: 3}
-  - {fileID: 6120737027548801906, guid: f4b894aadb053e94ca38b1b71c58813d, type: 3}
 --- !u!1 &700898104
 GameObject:
   m_ObjectHideFlags: 0

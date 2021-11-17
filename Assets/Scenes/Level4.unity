@@ -2285,7 +2285,7 @@ MonoBehaviour:
   - {fileID: 597583479}
   OccupiedCages: []
   startPosition: {x: 651, y: -222}
-  startRotation: {x: 0, y: 0, z: 180}
+  startRotation: {x: -0, y: 0, z: 180}
   isExtended: 0
   sizeMultiplicate: 2
   truePosition: {x: -538, y: 0.000022888}
@@ -3291,7 +3291,7 @@ MonoBehaviour:
   - {fileID: 1668726319}
   OccupiedCages: []
   startPosition: {x: 335, y: 128}
-  startRotation: {x: -0, y: -0, z: 90}
+  startRotation: {x: -0, y: 0, z: 90}
   isExtended: 0
   sizeMultiplicate: 2
   truePosition: {x: -318, y: -226}
@@ -4536,7 +4536,7 @@ MonoBehaviour:
   - {fileID: 1020956243}
   OccupiedCages: []
   startPosition: {x: 318, y: -174}
-  startRotation: {x: 0, y: 0, z: 180}
+  startRotation: {x: -0, y: 0, z: 180}
   isExtended: 0
   sizeMultiplicate: 2
   truePosition: {x: -168, y: 60}
@@ -4866,7 +4866,7 @@ MonoBehaviour:
   - {fileID: 1670781058}
   OccupiedCages: []
   startPosition: {x: 643, y: 78.00003}
-  startRotation: {x: 0, y: 0, z: 270}
+  startRotation: {x: -0, y: 0, z: 270}
   isExtended: 0
   sizeMultiplicate: 2
   truePosition: {x: -621, y: -307}

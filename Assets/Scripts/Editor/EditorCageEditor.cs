@@ -29,6 +29,7 @@ public class EditorCageEditor : Editor
                 if (!cage.gameObject.GetComponent<Cage>())
                     cage.gameObject.AddComponent<Cage>();
                 cage.GetComponent<Image>().sprite = FindObjectOfType<Archive>().FreeCage;
+                cage.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 150);
                 cage.tag = "Untagged";
             }
         }

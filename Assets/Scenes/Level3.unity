@@ -5140,7 +5140,7 @@ MonoBehaviour:
   - {fileID: 1964866886}
   OccupiedCages: []
   startPosition: {x: 469.56003, y: 249.97328}
-  startRotation: {x: 0, y: 0, z: 180}
+  startRotation: {x: -0, y: 0, z: 180}
   isExtended: 0
   sizeMultiplicate: 2
   truePosition: {x: -331, y: -243}
