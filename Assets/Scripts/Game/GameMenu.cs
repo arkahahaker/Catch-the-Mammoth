@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class GameMenu : MonoBehaviour
 
     private void Start() {
         Singleton = this;
+    }
+
+    private void Update() {
+        if (Input.GetKey (KeyCode.Escape))
+            StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("LevelsMenu"));
     }
 
     public void TurnScroll () {

@@ -66,6 +66,10 @@ public class TileMenuScroll : MonoBehaviour
         ToNextLevelButton.interactable = LevelsManager.LevelsCompletedCount + 1 != LevelsManager.CurrentLevel;
     }
 
+    public void offMusic() {
+        
+    }
+
     /// <summary>
     /// True if isn't turning and isn't in menu mode, 
     /// so we can act with tiles and tips

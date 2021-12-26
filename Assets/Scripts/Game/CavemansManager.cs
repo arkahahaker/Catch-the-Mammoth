@@ -11,18 +11,18 @@ public class CavemansManager : MonoBehaviour {
         Caveman[] cs = FindObjectsOfType<Caveman>();
         int[] randArr = new int[cs.Length];
         bool[] chosenElls = new bool[CavemenPrefabs.Count];
-        for (int i = 0; i < cs.Length; i++) {
+        foreach (var t in cs)
+        {
             int temp;
             do {
                 temp = Mathf.RoundToInt(Random.Range(-0.49f, CavemenPrefabs.Count - 0.51f));
             } while (chosenElls[temp]);
             chosenElls[temp] = true;
-            GameObject newCav = Instantiate(CavemenPrefabs[temp], cs[i].transform.position, cs[i].transform.rotation, cs[i].transform.parent);
+            GameObject newCav = Instantiate(CavemenPrefabs[temp], t.transform.position, t.transform.rotation, t.transform.parent);
             Destroy(newCav.transform.GetChild(0).GetChild(0).gameObject);
             GameObject Skin = Instantiate(SkinSetsManager.SkinSet.Skins[temp], newCav.transform.GetChild(0));
-            Destroy(cs[i].gameObject);
+            Destroy(t.gameObject);
             newCav.transform.parent.parent.GetComponent<DragableTile>().Setup();
-            
         }
     }
 

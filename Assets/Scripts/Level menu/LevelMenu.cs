@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,11 @@ public class LevelMenu : MonoBehaviour {
         LevelsToUnlockSlider.maxValue = LevelsManager.LevelsCount;
 
         MapScroller = Map.GetComponent<MapScroller>();
+    }
+
+    private void Update() {
+        if (Input.GetKey (KeyCode.Escape))
+            StartCoroutine (CustomSceneManager.Singleton.LoadSceneCurtains("MainMenu"));
     }
 
     public void LoadLevel(int level) {
