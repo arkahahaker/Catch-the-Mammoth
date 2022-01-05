@@ -55,9 +55,9 @@ public class Map : MonoBehaviour
         foreach(Cage cage in cages) {
             int cx = (int)cage.GetComponent<RectTransform>().localPosition.x;
             int cy = (int)cage.GetComponent<RectTransform>().localPosition.y;
-            cage.X = (cx - StartX) / CagesWidth;
-            cage.Y = (StartY - cy) / CagesHeight;
-            Cages[cage.X, cage.Y] = cage;
+            cage.x = (cx - StartX) / CagesWidth;
+            cage.y = (StartY - cy) / CagesHeight;
+            Cages[cage.x, cage.y] = cage;
         }
         GameObject Mammoth = GameObject.FindGameObjectWithTag("Mammoth");
         MammothX = (int)(Mammoth.GetComponent<RectTransform>().localPosition.x - StartX) / CagesWidth;
@@ -92,11 +92,13 @@ public class Map : MonoBehaviour
             foreach (GameObject point in tile.RaycastPoints) {
                 cage = CageByVector(tile.GetRealPointPosition(point));
                 cage.isFree = false;
-                tile.OccupiedCages.Add(cage);
+                cage.tile = tile;
+                tile.OccupiedCages.Add (cage);
             }
             cage = CageByVector(tile.GetRealPointPosition(tile.Caveman));
             cage.isFree = false;
             cage.isCaveman = true;
+            cage.tile = tile;
             tile.OccupiedCages.Add(cage);
 
             tile.IsSet = true;
@@ -135,7 +137,7 @@ public class Map : MonoBehaviour
     }
 
     public Vector2 VectorByCage (Cage c) {
-        return new Vector2(StartX + c.X * CagesWidth, StartY - c.Y * CagesHeight);
+        return new Vector2(StartX + c.x * CagesWidth, StartY - c.y * CagesHeight);
     }
 
     public Vector2 VectorByCoordinates(int x, int y) {

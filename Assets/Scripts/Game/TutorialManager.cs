@@ -10,7 +10,7 @@ public class TutorialManager : MonoBehaviour {
 
     public void RefreshText() {
         Text tutorial = Resources.FindObjectsOfTypeAll<Text>().Where(t => { return t.gameObject.name == "TutorialText"; }).First();
-
+        
         if (tutorial != null) {
             tutorial.text = LanguageManager.language.tutorials[LevelsManager.CurrentLevel - 1];
             Font f = LanguageManager.font;

@@ -26,13 +26,7 @@ public class TipManager : MonoBehaviour
 
     private void RefreshButton () {
         TipsAmountText.text = GetTipsCount().ToString();
-        if (GetTipsCount() == 0) {
-            TipButton.interactable = false;
-            BuyTipButton.gameObject.SetActive(true);
-        } else {
-            TipButton.interactable = true;
-            BuyTipButton.gameObject.SetActive(false);
-        }
+        TipButton.interactable = GetTipsCount() != 0;
     }
 
     public void UseTip () {
@@ -44,6 +38,7 @@ public class TipManager : MonoBehaviour
     }
 
     public void BuyTip () {
+        AdsManager.isReady = true;
         AdsManager.Singleton.ShowRewardedVideo();
         RefreshButton();
     }

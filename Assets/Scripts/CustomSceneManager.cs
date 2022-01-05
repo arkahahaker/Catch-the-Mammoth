@@ -35,7 +35,7 @@ public class CustomSceneManager : MonoBehaviour
     }
 
     private void OnSceneLoaded (Scene scene, LoadSceneMode mode) {
-        if (LeavesCurtain.Singleton.isCovered) StartCoroutine(LeavesCurtain.Singleton.ActCurtain());
+        if (LeavesCurtain.Singleton != null && LeavesCurtain.Singleton.isCovered) StartCoroutine(LeavesCurtain.Singleton.ActCurtain());
     }
 
 }

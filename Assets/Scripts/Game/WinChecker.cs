@@ -22,7 +22,7 @@ public class WinChecker : MonoBehaviour
     private void Start() {
         Singleton = this;
     }
-    #endregion Singleton
+    #endregion
 
     #region Chekers
 
@@ -57,14 +57,14 @@ public class WinChecker : MonoBehaviour
                 FindWay(cage);
                 return true;
             }
-            if (CanMove(cage.X, cage.Y + 1))
-                cages.Add(Map.Get.Cages[cage.X, cage.Y + 1]);
-            if (CanMove(cage.X + 1, cage.Y))
-                cages.Add(Map.Get.Cages[cage.X + 1, cage.Y]);
-            if (CanMove(cage.X, cage.Y - 1))
-                cages.Add(Map.Get.Cages[cage.X, cage.Y - 1]);
-            if (CanMove(cage.X - 1, cage.Y))
-                cages.Add(Map.Get.Cages[cage.X - 1, cage.Y]);
+            if (CanMove(cage.x, cage.y + 1))
+                cages.Add(Map.Get.Cages[cage.x, cage.y + 1]);
+            if (CanMove(cage.x + 1, cage.y))
+                cages.Add(Map.Get.Cages[cage.x + 1, cage.y]);
+            if (CanMove(cage.x, cage.y - 1))
+                cages.Add(Map.Get.Cages[cage.x, cage.y - 1]);
+            if (CanMove(cage.x - 1, cage.y))
+                cages.Add(Map.Get.Cages[cage.x - 1, cage.y]);
         }
         return false;
     }
@@ -72,8 +72,8 @@ public class WinChecker : MonoBehaviour
 
     #region Helpers
     private bool CanMove (Cage c) {
-        if (c != null && !c.isCaveman && !Checked[c.X, c.Y]) {
-            Checked[c.X, c.Y] = true;
+        if (c != null && !c.isCaveman && !Checked[c.x, c.y]) {
+            Checked[c.x, c.y] = true;
             return true;
         } else {
             return false;
@@ -87,7 +87,7 @@ public class WinChecker : MonoBehaviour
     }
 
     private bool IsWinnerCage (Cage c) {
-        return c.X == 0 || c.Y == 0 || c.X == Map.Get.Columns - 1 || c.Y == Map.Get.Rows - 1;
+        return c.x == 0 || c.y == 0 || c.x == Map.Get.Columns - 1 || c.y == Map.Get.Rows - 1;
     }
     #endregion
 
@@ -136,23 +136,23 @@ public class WinChecker : MonoBehaviour
         
         cages.Add(finalCage);
         Cage current = finalCage;
-        Checked[current.X, current.Y] = false;
+        Checked[current.x, current.y] = false;
 
         while (!mammothNear(current)) {
-            if (Map.Get.isCageExist(current.X, current.Y + 1) && Checked[current.X, current.Y + 1]) {
-                cages.Add(Map.Get.Cages[current.X, current.Y + 1]);
-            } else if (Map.Get.isCageExist(current.X + 1, current.Y) && Checked[current.X + 1, current.Y]) {
-                cages.Add(Map.Get.Cages[current.X + 1, current.Y]);
-            } else if (Map.Get.isCageExist(current.X, current.Y - 1) && Checked[current.X, current.Y - 1]) {
-                cages.Add(Map.Get.Cages[current.X, current.Y - 1]);
-            } else if (Map.Get.isCageExist(current.X - 1, current.Y) && Checked[current.X - 1, current.Y]) {
-                cages.Add(Map.Get.Cages[current.X - 1, current.Y]);
+            if (Map.Get.isCageExist(current.x, current.y + 1) && Checked[current.x, current.y + 1]) {
+                cages.Add(Map.Get.Cages[current.x, current.y + 1]);
+            } else if (Map.Get.isCageExist(current.x + 1, current.y) && Checked[current.x + 1, current.y]) {
+                cages.Add(Map.Get.Cages[current.x + 1, current.y]);
+            } else if (Map.Get.isCageExist(current.x, current.y - 1) && Checked[current.x, current.y - 1]) {
+                cages.Add(Map.Get.Cages[current.x, current.y - 1]);
+            } else if (Map.Get.isCageExist(current.x - 1, current.y) && Checked[current.x - 1, current.y]) {
+                cages.Add(Map.Get.Cages[current.x - 1, current.y]);
             } else {
                 cages.Remove(current);
             }
             if (cages.Count != 0) {
                 current = cages[cages.Count - 1];
-                Checked[current.X, current.Y] = false;
+                Checked[current.x, current.y] = false;
             }
         }
 
@@ -163,17 +163,17 @@ public class WinChecker : MonoBehaviour
         cages.Reverse();
 
         foreach (Cage c in cages) {
-            way.Add((c.X, c.Y));
+            way.Add((c.x, c.y));
         }
 
-        if (finalCage.X == Map.Get.Columns-1) {
-            way.Add((finalCage.X + 1, finalCage.Y));
-        } else if (finalCage.X == 0) {
-            way.Add((finalCage.X - 1, finalCage.Y));
-        } else if (finalCage.Y == Map.Get.Rows - 1) {
-            way.Add((finalCage.X, finalCage.Y + 1));
-        } else if (finalCage.Y == 0) {
-            way.Add((finalCage.X, finalCage.Y - 1));
+        if (finalCage.x == Map.Get.Columns-1) {
+            way.Add((finalCage.x + 1, finalCage.y));
+        } else if (finalCage.x == 0) {
+            way.Add((finalCage.x - 1, finalCage.y));
+        } else if (finalCage.y == Map.Get.Rows - 1) {
+            way.Add((finalCage.x, finalCage.y + 1));
+        } else if (finalCage.y == 0) {
+            way.Add((finalCage.x, finalCage.y - 1));
         }
 
         /*Debug.Log("(X, Y) [" + way.Count + "]:");
@@ -188,7 +188,7 @@ public class WinChecker : MonoBehaviour
     }
 
     private bool mammothNear(Cage c) {
-        return ((Mathf.Abs(Map.Get.MammothX - c.X) < 2 && Map.Get.MammothY == c.Y) || (Mathf.Abs(Map.Get.MammothY - c.Y) < 2 && Map.Get.MammothX == c.X));
+        return ((Mathf.Abs(Map.Get.MammothX - c.x) < 2 && Map.Get.MammothY == c.y) || (Mathf.Abs(Map.Get.MammothY - c.y) < 2 && Map.Get.MammothX == c.x));
     }
 
     #endregion

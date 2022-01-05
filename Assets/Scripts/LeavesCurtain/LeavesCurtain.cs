@@ -26,15 +26,6 @@ public class LeavesCurtain : MonoBehaviour
         } else Destroy(transform.parent.gameObject);
     }
 
-    #region TEMP
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            ActCurtain();
-            Debug.Log("R pressed");
-        }
-    }
-    #endregion
-
     public IEnumerator ActCurtain () {
         if (!isAnimating) {
             // Check and do something only when leaves aren't currently moving

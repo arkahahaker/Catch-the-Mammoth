@@ -7,10 +7,11 @@ public class SkinSetsManager : MonoBehaviour
 
     public static SkinSetsManager Singleton;
     public static SkinSet SkinSet;
+    public static int SkinSetNumber;
 
-    [SerializeField] SkinSet skinSet0;
-    [SerializeField] SkinSet skinSet1;
-    [SerializeField] SkinSet skinSet2;
+    [SerializeField] private SkinSet skinSet0;
+    [SerializeField] private SkinSet skinSet1;
+    [SerializeField] private SkinSet skinSet2;
     
     private void Awake() {
 
@@ -27,6 +28,8 @@ public class SkinSetsManager : MonoBehaviour
     }
 
     public void ChangeSkinSet (int set) {
+        SkinSetNumber = set;
+        PlayerPrefs.SetInt("skin", set);
         switch (set) {
             case 0:
                 GetComponent<SkinSet>().Skins = skinSet0.Skins;
@@ -37,6 +40,14 @@ public class SkinSetsManager : MonoBehaviour
             case 2:
                 GetComponent<SkinSet>().Skins = skinSet2.Skins;
                 break;
+        }
+    }
+
+    public GameObject GetSkin(int set, int skin) {
+        switch (set) {
+            case 0: return skinSet0.Skins[skin];
+            case 1: return skinSet1.Skins[skin];
+            default: return skinSet2.Skins[skin];
         }
     }
 

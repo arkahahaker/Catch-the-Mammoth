@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Cage : MonoBehaviour {
 
@@ -8,9 +9,10 @@ public class Cage : MonoBehaviour {
     public bool isFree;
     public bool isCaveman;
 
-    public int X;
+    public int x;
+    public int y;
 
-    public int Y;
+    public DragableTile tile;
     #endregion
 
     #region Start Actions
@@ -22,7 +24,7 @@ public class Cage : MonoBehaviour {
 
     #region Helpers
     public override string ToString() {
-        return "Cage (" + X + ", " + Y + ")";
+        return "Cage (" + x + ", " + y + ")";
     }
     #endregion
 

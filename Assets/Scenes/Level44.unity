@@ -367,8 +367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &152830563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,8 +500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &179578888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -788,8 +790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &186619193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,8 +923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &203578896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,8 +1399,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &355442690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1527,8 +1532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &372163029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1658,8 +1664,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &496011754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1663785815152932270, guid: 150db81fac668c1458a0fa64cd31ed0b, type: 3}
@@ -1679,8 +1686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,8 +2027,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &620111015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2151,8 +2160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &651956282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2254,7 +2264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3674064694251643935, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: trueRotation
-      value: 180.06836
+      value: 0.068359196
       objectReference: {fileID: 0}
     - target: {fileID: 3674064694251643935, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: truePosition.x
@@ -2637,8 +2647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &686589341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2921,8 +2932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!224 &791111893 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6510313253628863019, guid: a8c21d11f1f11a74581207385f5aa613, type: 3}
@@ -3203,8 +3215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &910290012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3334,8 +3347,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &930017378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3466,8 +3480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &956816645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3597,8 +3612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &963971201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3729,8 +3745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1041304646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2716643362811877595, guid: 26d7a8e7c8d3a7740bd4ebe36f379839, type: 3}
@@ -3955,8 +3972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1088615412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4086,8 +4104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1097628330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,54 +4460,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
---- !u!1 &1138929163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1138929165}
-  - component: {fileID: 1138929164}
-  m_Layer: 0
-  m_Name: SkinsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1138929164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138929163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2dba7078220cb4391f17e7d4dcb188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinSet0: {fileID: 7204807118967210179, guid: 8087f0cb901a73041a485b988b70ccb3, type: 3}
-  skinSet1: {fileID: 0}
-  skinSet2: {fileID: 0}
---- !u!4 &1138929165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138929163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.38908, y: 293.908, z: -5537.833}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1176830431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4565569008124968129, guid: 340b1f77bda280a4799bcd1991980ab6, type: 3}
@@ -4767,8 +4741,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1447327429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5009,8 +4984,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1542287697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6251159893862353120, guid: 8fa6e6a192defac45a820ffc8d10fde9, type: 3}
@@ -5030,8 +5006,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1566969521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5105,7 +5082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3674064694251643929, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00059654645
+      value: 0.0005965464
       objectReference: {fileID: 0}
     - target: {fileID: 3674064694251643929, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5173,7 +5150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616444095169740599, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00059654645
+      value: -0.0005965464
       objectReference: {fileID: 0}
     - target: {fileID: 5616444095169740599, guid: b66cfa256c573ce4c850e92622d0dbae, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5464,8 +5441,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1670592196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5596,8 +5574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1738002697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,8 +5897,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1819698283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,8 +6185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1897861710
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,8 +6352,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1920010676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6503,8 +6485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1933180721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6639,8 +6622,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1950861961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6771,8 +6755,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &1997600999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6903,8 +6888,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1 &1999498799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7181,8 +7167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFree: 0
   isCaveman: 0
-  X: 0
-  Y: 0
+  x: 0
+  y: 0
+  tile: {fileID: 0}
 --- !u!1001 &2146048764
 PrefabInstance:
   m_ObjectHideFlags: 0

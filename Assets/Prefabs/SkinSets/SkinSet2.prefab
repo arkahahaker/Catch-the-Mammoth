@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1866859439654080193}
   - component: {fileID: 7204807118967210179}
   m_Layer: 0
-  m_Name: SkinSet1
+  m_Name: SkinSet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Skins:
-  - {fileID: 2601437164125184907, guid: 678314a2887dfd247be777c63fb55e21, type: 3}
-  - {fileID: 2838493844941023797, guid: 4d1a6f1f16117d74398c5598e8263393, type: 3}
-  - {fileID: 5042094970687883003, guid: b1cb7d7196fd92e4587ca82d675a646d, type: 3}
-  - {fileID: 1919864276927634947, guid: 83ab59e958f68764ca53aa61d997f922, type: 3}
-  - {fileID: 8921904661427742245, guid: c95a0ffbb8aef5f45be281e435ea5f35, type: 3}
-  - {fileID: 3053152241985789184, guid: 50a479679a4657442940d2c4699d25f3, type: 3}
-  - {fileID: 3188207300700831084, guid: e61124192c600494f8b3a5ab34a88f4e, type: 3}
-  - {fileID: 4763431588615156945, guid: c2e77745754694149873ff073038ed82, type: 3}
-  - {fileID: 1789090607668055583, guid: 5ec955196f4fa034980bfe887342bb7c, type: 3}
+  - {fileID: 2601437164125184907, guid: 93dd38da9ab49be4fa8a5e8ab195f699, type: 3}
+  - {fileID: 5853330941275286706, guid: 7b982fb7ac204b94b8cc3ec1da27b742, type: 3}
+  - {fileID: 5042094970687883003, guid: 9f8126146f550a9409a9f719a13a8fb1, type: 3}
+  - {fileID: 1919864276927634947, guid: b196bc77a2372f747961d4185ae8ffea, type: 3}
+  - {fileID: 8921904661427742245, guid: e71d9b56ead30754596fdab3924efe26, type: 3}
+  - {fileID: 3053152241985789184, guid: afdb3486569ab564f8ca41e2a437a634, type: 3}
+  - {fileID: 8139545398628203700, guid: 0a1646bb4e5a2364db9bf86ee1324a8b, type: 3}
+  - {fileID: 262590012715087568, guid: ce769afddb4f7f6418c139d6b1a83faf, type: 3}
+  - {fileID: 1789090607668055583, guid: 6a8147de5bcc223469bbfecdf147fc78, type: 3}

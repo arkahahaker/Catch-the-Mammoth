@@ -277,6 +277,24 @@ public class DragableTile : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         yield return TurnTo(trueRotation);
         yield return TranslateTo(truePosition, 30, .01f);
 
+        HashSet<DragableTile> tilesToRemove = new HashSet<DragableTile>();
+
+        foreach (var point in RaycastPoints) {
+            Cage cage = Map.Get.CageByVector(GetRealPointPosition(point));
+            if (!cage.isFree)
+                if (!tilesToRemove.Contains(cage.tile))
+                    tilesToRemove.Add(cage.tile);
+        }
+        Cage cavCage = Map.Get.CageByVector(GetRealPointPosition(Caveman));
+        if (!cavCage.isFree)
+            if (!tilesToRemove.Contains(cavCage.tile))
+                tilesToRemove.Add(cavCage.tile);
+        
+        foreach (var tile in tilesToRemove) {
+            tile.RemoveFromMap();
+            StartCoroutine(tile.ReturnToStartPosition());
+        }
+
         Map.Get.SetTile(this);
 
         LevelsManager.isActive = true;

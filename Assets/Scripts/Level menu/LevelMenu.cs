@@ -9,6 +9,8 @@ public class LevelMenu : MonoBehaviour {
 
     public static Vector2 mapSize;
 
+    private bool isActive = true;
+
     [SerializeField] private GameObject Map;
     private MapScroller MapScroller { get; set; }
 
@@ -54,7 +56,9 @@ public class LevelMenu : MonoBehaviour {
     }
 
     public void LoadLevel(int level) {
+        if (!isActive) return;
         if (PlayerPrefs.GetInt("CompletedLevels") + 1 >= level) {
+            isActive = false;
             LevelsManager.CurrentLevel = level;
             LevelsManager.isActive = true;
             ToMainMenuButton.SetActive(false); 

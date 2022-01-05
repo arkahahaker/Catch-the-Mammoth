@@ -10,6 +10,8 @@ public class GameMenu : MonoBehaviour
 
     public static GameMenu Singleton;
 
+    private bool isActive = true;
+
     public TileMenuScroll Scroll;
 
     private void Start() {
@@ -30,6 +32,8 @@ public class GameMenu : MonoBehaviour
     }
 
     public void NextLevel () {
+        if (!isActive) return;
+        isActive = false;
         if (LevelsManager.CurrentLevel != LevelsManager.LevelsCount) {
             LevelsManager.CurrentLevel++;
             StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("Level" + LevelsManager.CurrentLevel));
@@ -43,6 +47,8 @@ public class GameMenu : MonoBehaviour
     }
 
     public void ToMenu () {
+        if (!isActive) return;
+        isActive = false;
         StartCoroutine(CustomSceneManager.Singleton.LoadSceneCurtains("LevelsMenu"));
     }
 

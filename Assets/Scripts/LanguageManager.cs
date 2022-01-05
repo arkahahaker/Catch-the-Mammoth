@@ -47,6 +47,9 @@ public class LanguageManager {
 
         MainMenuMap map = Object.FindObjectOfType<MainMenuMap>();
         map?.RefreshText();
+
+        SkinChooseMenu scm = Object.FindObjectOfType<SkinChooseMenu>();
+        scm?.RefreshLanguage();
     }
 
     public static int getLangNumber () {
@@ -73,6 +76,10 @@ public class LanguageManager {
 
         public string levelsCompleted;
         public string tapTheMapToPlay;
+
+        public string willBeSoonText;
+        public string watchAdText;
+        public string skin2Text;
 
         public string[] statusInProgress;
         public string[] statusCompleted;
